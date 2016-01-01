@@ -74,7 +74,7 @@ static void click_config_provider(void *context) {
 static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_frame(window_layer);
-  GRect frame = grect_inset(bounds, GEdgeInsets(30));
+  GRect frame = grect_inset(bounds, GEdgeInsets(2));
 
 /*   s_scroll_layer = scroll_layer_create(bounds); */
 /*   scroll_layer_set_click_config_onto_window(s_scroll_layer, window); */
