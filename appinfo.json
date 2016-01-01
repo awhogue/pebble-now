@@ -1,0 +1,19 @@
+{
+  "uuid": "d57bc913-537d-4420-8c30-cf5c6cd2ffcd",
+  "shortName": "Pebble Now",
+  "longName": "Pebble Now",
+  "companyName": "Secondthought.org",
+  "versionLabel": "0.1",
+  "sdkVersion": "3",
+  "targetPlatforms": ["basalt", "chalk"],
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "query": 0,
+    "answer": 1
+  },
+  "resources": {
+    "media": []
+  }
+}
