@@ -30,6 +30,14 @@ static void set_text(char *text) {
   APP_LOG(APP_LOG_LEVEL_INFO, "set_text()");
   APP_LOG(APP_LOG_LEVEL_INFO, text);
 
+  if (strlen(text) <= 10) {
+    text_layer_set_font(s_output_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
+  } else if (strlen(text) <= 30) {
+    text_layer_set_font(s_output_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  } else {
+    text_layer_set_font(s_output_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+  }
+
 /*   Layer *window_layer = window_get_root_layer(s_main_window); */
 /*   GRect bounds = layer_get_frame(window_layer); */
 
@@ -43,6 +51,7 @@ static void set_text(char *text) {
 static void dictation_session_callback(DictationSession *session, DictationSessionStatus status, 
                                        char *transcription, void *context) {
   if(status == DictationSessionStatusSuccess) {
+    set_text("Querying...");
     request_answer(transcription);
   } else {
     // Display the reason for any error
