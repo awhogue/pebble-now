@@ -7,7 +7,7 @@ Pebble.addEventListener("ready",
 );
 
 function fixAnswer(answer) {
-  return answer.substring(0, 512).replace('′', '\'').replace('″', '"')
+  return answer.substring(0, 512).replace('′', '\'').replace('″', '"').replace('′', '\'')
 }
 
 Pebble.addEventListener('appmessage',
