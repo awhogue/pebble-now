@@ -73,8 +73,9 @@ static void click_config_provider(void *context) {
 
 static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
-  GRect bounds = layer_get_frame(window_layer);
-  GRect frame = grect_inset(bounds, GEdgeInsets(2));
+
+  GRect bounds = layer_get_bounds(window_layer);
+  GRect frame = grect_inset(bounds, GEdgeInsets(20));
 
 /*   s_scroll_layer = scroll_layer_create(bounds); */
 /*   scroll_layer_set_click_config_onto_window(s_scroll_layer, window); */
@@ -88,7 +89,7 @@ static void window_load(Window *window) {
 /*   layer_add_child(window_layer, scroll_layer_get_layer(s_scroll_layer)); */
   layer_add_child(window_layer, text_layer_get_layer(s_output_layer));
 
-/*   text_layer_enable_screen_text_flow_and_paging(s_output_layer, 2); */
+  text_layer_enable_screen_text_flow_and_paging(s_output_layer, 2);
 /*   scroll_layer_set_paging(s_scroll_layer, true); */
 }
 
